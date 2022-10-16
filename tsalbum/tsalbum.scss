@@ -1,0 +1,176 @@
+$marginAndPadding : 20px;
+$borderRadius: 10px;
+$primaryThemeColor: black;
+$SecondaryThemeColor: rgb(0, 193, 0);
+$secondBackgroundColor: rgb(41, 41, 41);
+$tertiaryBackgroundColor: rgb(71, 66, 66);
+.logo{
+    border-radius: 10px;
+    height: 70px;
+    margin: $marginAndPadding;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+*{
+    margin:0px;
+}
+
+.topnav{
+    padding: $marginAndPadding;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.items{ 
+    min-height: 20vh;
+    margin: $marginAndPadding;
+    background-color: $secondBackgroundColor;
+    border-radius: $borderRadius;
+    padding: 0 $marginAndPadding $marginAndPadding  $marginAndPadding;
+  
+    .searchbar{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+   
+    @media screen and (max-width:650px){
+        .searchbar{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .totaldisp{
+        
+        display: flex;
+        justify-content: end;
+    
+        .totalNumber{
+            margin-left: 5px;
+        }
+    }
+    .search{
+        display: flex;
+        flex-direction: column;
+
+        input{
+            border-radius: 7px;
+        height: 3vh;        }
+    }
+
+    select{
+        border-radius: 5px;
+        margin: $marginAndPadding
+    }
+
+
+    .cards{
+        min-height: 20vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .card{
+        width: 100%;
+        display: flex;
+        background-color: $tertiaryBackgroundColor;
+        border-radius: $borderRadius;
+       padding-top: $marginAndPadding;
+       padding-bottom: $marginAndPadding;
+       margin-top: $marginAndPadding;
+    }
+    .placeholder{
+        width: 15%;
+        margin-left: $marginAndPadding;
+        margin-right: $marginAndPadding;
+        border-radius: $borderRadius;
+    }
+}
+
+.add{
+    margin: $marginAndPadding;
+    font-size: 20px;
+    bottom: 2vh;
+    right: 2vh;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 7vh;
+    height: 7vh;
+    background-color: $SecondaryThemeColor;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+.add:hover{
+    transform: scale(1.2);
+    box-shadow: 1px 1px  10px white;
+}
+
+.addcontent{
+    color: $primaryThemeColor;
+    padding: $marginAndPadding;
+    background-color: rgb(223, 241, 187);
+    border-radius: 10px;
+    min-width: 50vw;
+    min-height: 32vh;
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: fixed;
+    right: $marginAndPadding;
+    bottom: 14vh;
+    
+    .heading-small{
+        font-size: larger;
+        margin-bottom: 10px;
+        color: $SecondaryThemeColor;
+    }
+
+    .input{
+        font-size: medium;
+        margin: $marginAndPadding;
+        
+    }
+    .inputfield{
+        border-radius: 5px;
+        width: 40%;
+        border-color: $SecondaryThemeColor;
+    }
+    .submit{
+        float: right;
+        background-color: $SecondaryThemeColor;
+        border:none;
+        height: 4vh;
+        width: 12vw;
+        border-radius: $borderRadius;
+        color: white;
+        font-weight: bold;
+      }
+      #error{
+        color: red;
+        margin-right: $marginAndPadding;
+    }
+    
+    .submitsection{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+}
+body{
+    background-color: $primaryThemeColor;
+    color: white
+}
+
+.contents{
+    line-height: 1.7rem;
+}

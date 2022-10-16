@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assignment.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="topnav">
+        <img class = "logo" height="30px" src="logo.png" alt="">
+        <div> 
+            <a href="psykos.html">PSYKOS</a>
+            <a  href="psy.html">PSY</a>
+            <a href="kos.html">KOS</a>
+            <a class="active" href="contact.html">CONTACT</a>
+        </div>
+
+    </header>
+
+    
+    <content class = "content ">
+        <form action="action_page.php">
+<h4 class="heading">Contact Us</h4>
+            <div class="inputs">
+                <label class = "label" for="lname">Last Name</label>  
+                <input class="input" type="text" id="fname" name="firstname" placeholder="Your name..">
+            </div>
+            <div class="inputs">
+            <label class = "label" for="fname">First Name</label>
+            <input class="input" type="text" id="lname" name="lastname" placeholder="Your last name..">
+        </div>
+        <div class="inputs">
+            <label class = "label" for="country">Country</label>
+            <select class="input" id="country" name="country">
+              <option value="australia">India</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select>
+        </div>
+        <div class="inputs">
+            <label class = "label" for="subject">Subject</label>
+            <br>
+            <textarea class="input" id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        </div>
+            <input class = "submit" type="submit" value="SUBMIT">
+        
+          </form>
+    </content>
+    <footer class = "footer">
+        &copy; carestack | 2022
+    </footer>
+    </body>
+</html>

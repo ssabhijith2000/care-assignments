@@ -1,0 +1,160 @@
+.logo {
+  border-radius: 10px;
+  height: 70px;
+  margin: 20px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0px;
+}
+
+.topnav {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.items {
+  min-height: 20vh;
+  margin: 20px;
+  background-color: rgb(41, 41, 41);
+  border-radius: 10px;
+  padding: 0 20px 20px 20px;
+}
+.items .searchbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 650px) {
+  .items .searchbar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.items .totaldisp {
+  display: flex;
+  justify-content: end;
+}
+.items .totaldisp .totalNumber {
+  margin-left: 5px;
+}
+.items .search {
+  display: flex;
+  flex-direction: column;
+}
+.items .search input {
+  border-radius: 7px;
+  height: 3vh;
+}
+.items select {
+  border-radius: 5px;
+  margin: 20px;
+}
+.items .cards {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.items .card {
+  width: 100%;
+  display: flex;
+  background-color: rgb(71, 66, 66);
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+.items .placeholder {
+  width: 15%;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.add {
+  margin: 20px;
+  font-size: 20px;
+  bottom: 2vh;
+  right: 2vh;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 7vh;
+  height: 7vh;
+  background-color: rgb(0, 193, 0);
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.add:hover {
+  transform: scale(1.2);
+  box-shadow: 1px 1px 10px white;
+}
+
+.addcontent {
+  color: black;
+  padding: 20px;
+  background-color: rgb(223, 241, 187);
+  border-radius: 10px;
+  min-width: 50vw;
+  min-height: 32vh;
+  opacity: 0;
+  transition: opacity 0.5s;
+  position: fixed;
+  right: 20px;
+  bottom: 14vh;
+}
+.addcontent .heading-small {
+  font-size: larger;
+  margin-bottom: 10px;
+  color: rgb(0, 193, 0);
+}
+.addcontent .input {
+  font-size: medium;
+  margin: 20px;
+}
+.addcontent .inputfield {
+  border-radius: 5px;
+  width: 40%;
+  border-color: rgb(0, 193, 0);
+}
+.addcontent .submit {
+  float: right;
+  background-color: rgb(0, 193, 0);
+  border: none;
+  height: 4vh;
+  width: 12vw;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+.addcontent #error {
+  color: red;
+  margin-right: 20px;
+}
+.addcontent .submitsection {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.contents {
+  line-height: 1.7rem;
+}/*# sourceMappingURL=musicapp.css.map */

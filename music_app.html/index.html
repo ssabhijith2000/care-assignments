@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="musicapp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Music App</title>
+   
+</head>
+<body>
+    <header class="topnav">
+        <img class = "logo" height="30px" src="logo.png" alt="">
+        <h1> MUSIC APP </h1>
+    </header>
+
+    
+    <content class = "content">
+        <div class="items">
+            <div class="searchbar">  
+                    <div class = "search">
+                        <div>
+                            <label for="sort">Search by</label>
+                            <select name="searchBy"  onchange= search() id="searchBy" >
+                                <option value="name" disabled selected>click to select</option>
+                                <option value="name">Name</option>
+                                <option def value="artist">Artist</option>
+                                <option value="year">Year</option>
+                            </select>
+                        </div>
+                        <input id = "searchField" placeholder = "search here.." type="text" onkeyup= search() >
+                    </div>
+                    <div class="sort">
+                        <label for="sort">Sort by</label>
+                        <select onchange = sort() name="sortBy" id="sortBy">
+                        <option value="none" disabled selected>click to select</option>
+                        <option value="name">Name</option>
+                        <option value="artist">Artist</option>
+                        <option value="year">Year</option>
+                        </select>
+                    </div>
+                    <div class="totaldisp">
+                        <span> Total songs: </span> <span id = "numberOfSongs" class ="totalNumber">28</span>
+                    </div>
+            </div>
+              
+            
+            <div id="cards" class="cards">
+               
+            </div>
+        </div>
+              <div id = "addContent" class="addcontent">
+                <h4 class="heading-small">Add Music</h4>
+                <div class="forms">
+                    <div class="input">
+                        <label for="name">Song Name</label>
+                        <input type="text" name="name" id = "name" class="inputfield">
+                    </div>
+                    <div class="input">
+                        <label for="artist">Song Artist</label>
+                        <input type="text" name = "artist" id = "artist" class="inputfield">
+                    </div>
+                    <div class="input">
+                        <label for="year">Year released</label>
+                        <input type="number" name="year" id="year" class="inputfield">
+                    </div>
+                    <div class="input">
+                        <label for="cover">Album Cover</label>
+                        <input type="file" name = "cover" onchange=uploadImageandReturnLink() id = "cover" class="inputfield">
+                    </div>
+                    <div class ="submitsection">
+                        <span id="error"></span>
+                        <input class = "submit" onclick=handleFormSubmit() id = "submit" type="submit" value="SUBMIT">
+                    </div>    
+                </div>
+            </div>
+        <div id = "add" class="add">
+            <i class="fa fa-plus"></i>
+        </div>
+    </content>
+    <script src="music.js"></script>
+    </body>
+</html>

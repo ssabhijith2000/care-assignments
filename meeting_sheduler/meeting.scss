@@ -1,0 +1,43 @@
+.form{
+    display: flex; 
+    margin-top:10%;
+    justify-content: center;
+    width:100%;
+    
+}
+@media screen and (max-width:1050px){
+    .form-inner{
+        display: flex;
+        padding: 2%;
+        height: 30vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.input{
+    select{
+        border-radius: 5px;
+        background-color: aliceblue;
+    }
+    label{
+        font-weight: 600;
+    }
+}
+.form-inner{
+    display: flex; width:75%; justify-content:space-between;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: antiquewhite
+}
+
+.submit{
+    background-color: indigo;
+        border:none;
+        width: auto;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+}
