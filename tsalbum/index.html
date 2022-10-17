@@ -40,44 +40,37 @@
                         <option value="year">Year</option>
                         </select>
                     </div>
-                    <div class="totaldisp">
-                        <span> Total songs: </span> <span id = "numberOfSongs" class ="totalNumber">28</span>
-                    </div>
+                    
             </div>
               
             
             <div id="cards" class="cards">
-               
             </div>
         </div>
-              <div id = "addContent" class="addcontent">
-                <h4 class="heading-small">Add Music</h4>
-                <div class="forms">
-                    <div class="input">
-                        <label for="name">Song Name</label>
-                        <input type="text" name="name" id = "name" class="inputfield">
-                    </div>
-                    <div class="input">
-                        <label for="artist">Song Artist</label>
-                        <input type="text" name = "artist" id = "artist" class="inputfield">
-                    </div>
-                    <div class="input">
-                        <label for="year">Year released</label>
-                        <input type="number" name="year" id="year" class="inputfield">
-                    </div>
-                    <div class="input">
-                        <label for="cover">Album Cover</label>
-                        <input type="file" name = "cover" onchange=uploadImageandReturnLink() id = "cover" class="inputfield">
-                    </div>
-                    <div class ="submitsection">
-                        <span id="error"></span>
-                        <input class = "submit" onclick=handleFormSubmit() id = "submit" type="submit" value="SUBMIT">
-                    </div>    
-                </div>
+        <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="items">
+        <div class="searchbar">  
+            <div>
+                <label for="sort">Search by song</label>   
+                <input id = "searchField" placeholder = "search here.." type="text" onkeyup= search() >
             </div>
-        <div id = "add" class="add">
-            <i class="fa fa-plus"></i>
+            <div class="sort">
+                <span class="close" id = "close">&times;</span>
+            </div>
         </div>
+      
+      <!-- <p>Some text in the Modal..</p> -->
+      <div id = "grid-container" class="grid-container">
+        
+      </div>
+    </div>
+  
+  </div>
+  </div>
     </content>
     <script src="dist/index.js"></script>
     </body>
