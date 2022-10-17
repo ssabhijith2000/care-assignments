@@ -6,6 +6,7 @@ const errorMsg = document.getElementById('error')
 const modal = <HTMLElement> document.getElementById("myModal");
 const span = <HTMLElement>document.getElementById("close");
 const gridContainer = <HTMLElement> document.getElementById("grid-container")
+const photoSearch =  <HTMLInputElement> document.getElementById('photosearchField')
 
  interface Albums  {
   userId : number
@@ -198,13 +199,29 @@ async function search(){
   }
 }
 
+async function searchPhotos(id:string){
+  let input = photoSearch.value
+  
+  const regex = new RegExp(input,"gi")
+  let photos:any = await dbquery.queryWithIndex('photos','albumId',id)
+  if (input === '')
+   displayPhotos(photos)
+  else{
+  let filteredPhotos = photos.filter((photo:any) => regex.test(photo.title))
+  
+  displayPhotos(filteredPhotos)
+  }
+}
+
 function displayPhotos(viewPhotoList:any){
   let cardsContent = "";
   if (cards !== null) {
       if (viewPhotoList.length === 0) {
-          span.innerHTML = "no items to display";
-      }
+          gridContainer.innerHTML = "no items to display";
+          gridContainer.classList.replace('grid-container','grid-container-empty')
+        }
       else {
+        gridContainer.classList.replace('grid-container-empty','grid-container')
         viewPhotoList.forEach((album:any) => {
               cardsContent += ` <div class="grid-item">
         <a href ='${album.url}'> <img src='${album.thumbnailUrl}'></a>
@@ -218,8 +235,10 @@ function displayPhotos(viewPhotoList:any){
 
 async function openModal(id:string){
   let photos= await dbquery.queryWithIndex('photos','albumId',id) 
-  displayPhotos(photos)
+  photoSearch.addEventListener('keyup',()=>{searchPhotos(id)})
+  searchPhotos(id)
   modal.style.display = "flex";
+
 
 }
 

@@ -214,4 +214,13 @@ body {
   padding: 10px;
   text-align: center;
   background-color: rgb(128, 80, 80);
+}
+
+.gridcontainer-empty {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  gap: 5px 5px;
 }/*# sourceMappingURL=tsalbum.css.map */

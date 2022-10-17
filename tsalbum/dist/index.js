@@ -16,6 +16,7 @@ const errorMsg = document.getElementById('error');
 const modal = document.getElementById("myModal");
 const span = document.getElementById("close");
 const gridContainer = document.getElementById("grid-container");
+const photoSearch = document.getElementById('photosearchField');
 class API {
     get(url) {
         let promise = new Promise((resolve, reject) => {
@@ -182,13 +183,28 @@ function search() {
         }
     });
 }
+function searchPhotos(id) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let input = photoSearch.value;
+        const regex = new RegExp(input, "gi");
+        let photos = yield dbquery.queryWithIndex('photos', 'albumId', id);
+        if (input === '')
+            displayPhotos(photos);
+        else {
+            let filteredPhotos = photos.filter((photo) => regex.test(photo.title));
+            displayPhotos(filteredPhotos);
+        }
+    });
+}
 function displayPhotos(viewPhotoList) {
     let cardsContent = "";
     if (cards !== null) {
         if (viewPhotoList.length === 0) {
-            span.innerHTML = "no items to display";
+            gridContainer.innerHTML = "no items to display";
+            gridContainer.classList.replace('grid-container', 'grid-container-empty');
         }
         else {
+            gridContainer.classList.replace('grid-container-empty', 'grid-container');
             viewPhotoList.forEach((album) => {
                 cardsContent += ` <div class="grid-item">
         <a href ='${album.url}'> <img src='${album.thumbnailUrl}'></a>
@@ -202,7 +218,8 @@ function displayPhotos(viewPhotoList) {
 function openModal(id) {
     return __awaiter(this, void 0, void 0, function* () {
         let photos = yield dbquery.queryWithIndex('photos', 'albumId', id);
-        displayPhotos(photos);
+        photoSearch.addEventListener('keyup', () => { searchPhotos(id); });
+        searchPhotos(id);
         modal.style.display = "flex";
     });
 }
