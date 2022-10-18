@@ -12,7 +12,7 @@
 <body>
     <header class="topnav">
         <img class = "logo" height="30px" src="logo.png" alt="">
-        <h1> MUSIC APP </h1>
+        <h1> ALBUM PLACE </h1>
     </header>
 
     
@@ -22,15 +22,9 @@
                     <div class = "search">
                         <div>
                             <label for="sort">Search by</label>
-                            <select name="searchBy"  onchange= search() id="searchBy" >
-                                <option value="name" disabled selected>click to select</option>
-                                <option value="name">Name</option>
-                                <option def value="artist">Artist</option>
-                                <option value="year">Year</option>
-                            </select>
+                            <input id = "searchField" placeholder = "search here.." type="text" onkeyup= debounceSearch()>
                         </div>
-                        <input id = "searchField" placeholder = "search here.." type="text" onkeyup= search() >
-                    </div>
+                          </div>
                     
                     
             </div>
@@ -44,7 +38,7 @@
 
     <!-- Modal content -->
     <div class="modal-content">
-        <div class="items">
+        <div class="items-grid">
         <div class="searchbar">  
             <div>
                 <label for="sort">Search by song</label>   

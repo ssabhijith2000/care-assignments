@@ -234,12 +234,9 @@ function displayPhotos(viewPhotoList:any){
 }
 
 async function openModal(id:string){
-  let photos= await dbquery.queryWithIndex('photos','albumId',id) 
   photoSearch.addEventListener('keyup',()=>{searchPhotos(id)})
   searchPhotos(id)
   modal.style.display = "flex";
-
-
 }
 
 span.onclick = function() {
@@ -251,3 +248,14 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+const debounce = (fn: Function, ms = 500) => {
+  let timeoutId: ReturnType<typeof setTimeout>;
+  return function (this: any, ...args: any[]) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn.apply(this, args), ms);
+  };
+};
+
+
+const debounceSearch = debounce(() => search());

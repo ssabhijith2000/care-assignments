@@ -217,7 +217,6 @@ function displayPhotos(viewPhotoList) {
 }
 function openModal(id) {
     return __awaiter(this, void 0, void 0, function* () {
-        let photos = yield dbquery.queryWithIndex('photos', 'albumId', id);
         photoSearch.addEventListener('keyup', () => { searchPhotos(id); });
         searchPhotos(id);
         modal.style.display = "flex";
@@ -231,4 +230,15 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 };
+const debounce = (fn, ms = 500) => {
+    let timeoutId;
+    return function (...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn.apply(this, args), ms);
+    };
+};
+const debounceSearch = debounce(() => search());
+function deleteDatabase() {
+    indexedDB.deleteDatabase('albumdb');
+}
 //# sourceMappingURL=index.js.map
