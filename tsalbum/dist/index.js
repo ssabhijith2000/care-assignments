@@ -238,7 +238,4 @@ const debounce = (fn, ms = 500) => {
     };
 };
 const debounceSearch = debounce(() => search());
-function deleteDatabase() {
-    indexedDB.deleteDatabase('albumdb');
-}
 //# sourceMappingURL=index.js.map
