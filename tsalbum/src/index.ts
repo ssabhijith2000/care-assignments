@@ -31,6 +31,7 @@ class API {
     }
 }
 
+
 class DBQuery {
     queryWithIndex(tablename:string, indexColumn:string, indexValue:string) {
       let promise: Promise<Albums[] | Photos[]> = new Promise((resolve,reject) => {

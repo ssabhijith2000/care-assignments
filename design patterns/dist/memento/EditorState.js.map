@@ -1,0 +1,1 @@
+{"version":3,"file":"EditorState.js","sourceRoot":"","sources":["../../src/memento/EditorState.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW;IAGf,YAAY,OAAe;QACzB,IAAI,CAAC,QAAQ,GAAG,OAAO,CAAC;IAC1B,CAAC;IAGD,IAAW,OAAO;QAChB,OAAO,IAAI,CAAC,QAAQ,CAAC;IACvB,CAAC;CAEF;AAED,eAAe,WAAW,CAAA"}
