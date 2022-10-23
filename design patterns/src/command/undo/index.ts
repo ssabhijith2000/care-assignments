@@ -1,0 +1,4 @@
+class HtmlDocument {
+    content : string
+    
+}
