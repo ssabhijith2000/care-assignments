@@ -1,0 +1,1 @@
+{"version":3,"file":"BrushTool.js","sourceRoot":"","sources":["../../src/state/BrushTool.ts"],"names":[],"mappings":"AAEA,MAAM,SAAS;IACX,SAAS;QACL,OAAO,CAAC,GAAG,CAAC,sBAAsB,CAAC,CAAC;IACxC,CAAC;IAED,OAAO;QACH,OAAO,CAAC,GAAG,CAAC,aAAa,CAAC,CAAC;IAC/B,CAAC;CACJ;AAED,eAAe,SAAS,CAAA"}

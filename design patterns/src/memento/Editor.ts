@@ -1,4 +1,4 @@
-import EditorState from "./EditorState";
+import EditorState from "./EditorState.js";
 
 class Editor {
   private _content?: string  ;

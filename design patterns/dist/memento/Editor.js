@@ -1,4 +1,4 @@
-import EditorState from "./EditorState";
+import EditorState from "./EditorState.js";
 class Editor {
     createState() {
         return new EditorState(this._content);

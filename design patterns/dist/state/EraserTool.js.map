@@ -1,0 +1,1 @@
+{"version":3,"file":"EraserTool.js","sourceRoot":"","sources":["../../src/state/EraserTool.ts"],"names":[],"mappings":"AAEA,MAAM,UAAU;IACZ,SAAS;QACL,OAAO,CAAC,GAAG,CAAC,uBAAuB,CAAC,CAAC;IACzC,CAAC;IAED,OAAO;QACH,OAAO,CAAC,GAAG,CAAC,iBAAiB,CAAC,CAAC;IACnC,CAAC;CACJ;AAED,eAAe,UAAU,CAAA"}

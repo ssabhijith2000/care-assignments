@@ -1,0 +1,1 @@
+{"version":3,"file":"SelectionTool.js","sourceRoot":"","sources":["../../src/state/SelectionTool.ts"],"names":[],"mappings":"AAEA,MAAM,aAAa;IACf,SAAS;QACL,OAAO,CAAC,GAAG,CAAC,yBAAyB,CAAC,CAAC;IAC3C,CAAC;IAED,OAAO;QACH,OAAO,CAAC,GAAG,CAAC,6BAA6B,CAAC,CAAC;IAC/C,CAAC;CACJ;AAED,eAAe,aAAa,CAAA"}

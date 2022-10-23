@@ -1,4 +1,4 @@
-import EditorState from "./EditorState";
+import EditorState from "./EditorState.js";
 
 class StateHistory {
   private _states: EditorState[] = [];

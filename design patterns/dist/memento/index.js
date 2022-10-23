@@ -1,5 +1,5 @@
-import Editor from "./memento/Editor";
-import StateHistory from "./memento/StateHistory";
+import Editor from "./Editor.js";
+import StateHistory from "./StateHistory.js";
 let editor = new Editor();
 let history = new StateHistory();
 editor.setContent = "a";
