@@ -1,0 +1,1 @@
+{"version":3,"file":"CommandHistory.js","sourceRoot":"","sources":["../../../src/command/undo/CommandHistory.ts"],"names":[],"mappings":"AAEA,MAAM,cAAc;IAApB;QACI,cAAS,GAAsB,EAAE,CAAC;IAStC,CAAC;IAPG,IAAI,CAAC,OAAwB;QACzB,IAAI,CAAC,SAAS,CAAC,IAAI,CAAC,OAAO,CAAC,CAAC;IACjC,CAAC;IAED,GAAG;QACC,OAAO,IAAI,CAAC,SAAS,CAAC,GAAG,EAAE,CAAC;IAChC,CAAC;CACJ;AAED,eAAe,cAAc,CAAA"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"AddCustomerCommand.js","sourceRoot":"","sources":["../../src/command/AddCustomerCommand.ts"],"names":[],"mappings":"AAGA,MAAM,kBAAkB;IAGpB,YAAY,OAAwB;QAChC,IAAI,CAAC,QAAQ,GAAG,OAAO,CAAC;IAC5B,CAAC;IAED,OAAO;QACH,IAAI,CAAC,QAAQ,CAAC,WAAW,EAAE,CAAC;IAChC,CAAC;CACJ;AAED,eAAe,kBAAkB,CAAA"}
