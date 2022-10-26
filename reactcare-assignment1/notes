@@ -1,0 +1,18 @@
+Setting up env:
+    1. Node installed in your sys
+    2. VS code 
+    3. Git bash - https://git-scm.com/downloads
+
+
+Commands
+    1. node --version
+    2. npx create-react-app appname
+    3. npm run start
+
+
+Layout.js
+    // import button from material UI
+        // show in ui the inputs from FORM
+            // create a component
+            // send the values to another component using props
+            // render the value in that component
