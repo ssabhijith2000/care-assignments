@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getUsers } from '../../service/users'
 import NavBar from '../../components/navbar/Navbar'
-import { TextField, Stack} from '@mui/material';
+import { TextField} from '@mui/material';
 import UserData from "../userData/userData";
 
 

@@ -7,6 +7,7 @@ import Home from './pages/home/Home'
 import User from './pages/user/User'
 import NotFound from './pages/NotFound'
 import UserDetails from './pages/userDetails/UserDetails';
+import SignIn from './pages/signin/Signin';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}></Route>
+          <Route path="/login" element={<SignIn/>}></Route>
           <Route path="/home" element={<Home />} />
           <Route path="/user" element={<User />} />
           <Route path="/user/:userId" element={<UserDetails />} /> 
