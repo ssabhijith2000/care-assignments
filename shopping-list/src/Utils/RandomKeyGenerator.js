@@ -1,5 +1,5 @@
 const giveRandomKey = () => {
-  const length = 5;
+  const length = 10;
   const characters = "abcdefghijklmnopqrstuvwxyz";
   let result = "";
   const charactersLength = characters.length;

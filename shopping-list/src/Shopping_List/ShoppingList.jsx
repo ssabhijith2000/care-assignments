@@ -8,9 +8,14 @@ function ShoppingList({ items }) {
     <>
       <Container maxWidth="lg">
         <Stack direction="column" spacing={2}>
-          <h2>Current List</h2>
+          <h2>Shopping List</h2>
           {Object.keys(items).map((key, index) => (
-            <ItemCard key={index} itemNumber={index + 1} item={items[key]} />
+            <ItemCard
+              key={index}
+              itemNumber={index + 1}
+              uniqueKey={key}
+              item={items[key]}
+            />
           ))}
         </Stack>
       </Container>

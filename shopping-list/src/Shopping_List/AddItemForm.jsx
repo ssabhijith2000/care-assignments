@@ -17,7 +17,7 @@ function AddItemList() {
 
     setItems((items) => {
       items[key] = item;
-      return items;
+      return { ...items };
     });
   };
 
