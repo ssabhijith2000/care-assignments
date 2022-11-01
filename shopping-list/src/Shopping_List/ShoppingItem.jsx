@@ -12,14 +12,6 @@ function ItemCard({ uniqueKey, itemNumber, item }) {
     });
   };
 
-  const {
-    updateItems,
-  } = () => {
-    setItems((items) => {
-      items[uniqueKey];
-    });
-  };
-
   return (
     <>
       <Container maxWidth="xl">

@@ -1,4 +1,4 @@
-import React, { useState, createContext, useRef } from "react";
+import React, { useState, createContext } from "react";
 import AddItemList from "./Shopping_List/AddItemForm";
 import ShoppingList from "./Shopping_List/ShoppingList";
 
@@ -10,14 +10,11 @@ function App() {
     dfqogmudfe: "Onions",
     dferikdcbut: "Tomatoes",
   });
-  const [formButtonText, setFormButtonText] = useState("Add");
   return (
     <Context.Provider
       value={{
         items,
         setItems,
-        formButtonText,
-        setFormButtonText,
       }}
     >
       <div className="App">

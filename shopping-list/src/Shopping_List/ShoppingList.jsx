@@ -1,6 +1,4 @@
 import { Container, Stack } from "@mui/material";
-import { useContext } from "react";
-import { Context } from "../App";
 import ItemCard from "./ShoppingItem";
 
 function ShoppingList({ items }) {
