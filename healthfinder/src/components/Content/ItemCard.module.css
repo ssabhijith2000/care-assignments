@@ -1,0 +1,13 @@
+.card {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  overflow: hidden;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.title {
+  color: rgb(16, 42, 235);
+  font-size: 1.4rem;
+}

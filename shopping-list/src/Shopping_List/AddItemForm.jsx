@@ -10,7 +10,7 @@ import {
 import { Context } from "../App";
 import giveRandomKey from "../Utils/RandomKeyGenerator";
 function AddItemList() {
-  const { items, setItems } = useContext(Context);
+  const { setItems } = useContext(Context);
 
   const addItemToList = (item) => {
     let key = giveRandomKey();
