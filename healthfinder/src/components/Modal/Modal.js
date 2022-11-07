@@ -1,7 +1,7 @@
 import Backdrop from "./Backdrop";
 import { useEffect, useState, useContext } from "react";
 import ModalOverlay from "./ModalOverlay";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useGetData from "../../Utils/apiServices";
 import { context } from "../../App";
 import Spinner from "../../UI/Spinner";
