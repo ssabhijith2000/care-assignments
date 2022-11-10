@@ -14,6 +14,8 @@ function App() {
     dferikdcbut: "Tomatoes",
   });
   const [editState, setEditState] = useState();
+  const [spinnerFlag, setSpinnerFlag] = useState(true);
+
   return (
     <Context.Provider
       value={{
@@ -21,6 +23,8 @@ function App() {
         setItems,
         editState,
         setEditState,
+        spinnerFlag,
+        setSpinnerFlag,
       }}
     >
       <div className="App">
