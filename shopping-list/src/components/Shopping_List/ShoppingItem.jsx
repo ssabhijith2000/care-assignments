@@ -2,9 +2,12 @@ import React, { useContext } from "react";
 import { Card, Container, Box, Button } from "@mui/material";
 
 import { Context } from "../../App";
+import { useDeleteData } from "../../Utils/apiService";
 
 function ItemCard({ uniqueKey, itemNumber, item }) {
+  const [itemId, setItemId] = useState(null);
   const { setItems, items, setEditState } = useContext(Context);
+  let data = useDeleteData(`delete`, id);
   const deleteItem = () => {
     setItems((items) => {
       delete items[uniqueKey];

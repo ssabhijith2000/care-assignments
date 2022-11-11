@@ -9,16 +9,14 @@ import {
 } from "@mui/material";
 import { Context } from "../../App";
 import giveRandomKey from "../../Utils/RandomKeyGenerator";
+import { usePostData } from "../../Utils/apiService";
 function AddItemList() {
   const { setItems, editState, setEditState } = useContext(Context);
   const [inputFieldState, setInputFieldState] = useState();
+  const [postRequestBody, setPostRequestBody] = useState(null);
+  let data = usePostData(`add`, postRequestBody);
   const addItemToList = (value) => {
-    let key = giveRandomKey();
-
-    setItems((items) => {
-      items[key] = value;
-      return { ...items };
-    });
+    setPostRequestBody({ item: value });
   };
 
   useEffect(() => {

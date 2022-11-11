@@ -15,7 +15,7 @@ function App() {
   });
   const [editState, setEditState] = useState();
   const [spinnerFlag, setSpinnerFlag] = useState(true);
-
+  const [apiResponse, setApiResponse] = useState("");
   return (
     <Context.Provider
       value={{
@@ -25,6 +25,8 @@ function App() {
         setEditState,
         spinnerFlag,
         setSpinnerFlag,
+        apiResponse,
+        setApiResponse,
       }}
     >
       <div className="App">
