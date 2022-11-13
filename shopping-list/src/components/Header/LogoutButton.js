@@ -1,5 +1,3 @@
-import { Context } from "../../App";
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Logout.module.css";
 

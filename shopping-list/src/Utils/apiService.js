@@ -5,32 +5,17 @@ import { Context } from "../App";
 import axios from "axios";
 const API_URL = "http://localhost:5000/";
 
-const useApiCall = function (fn) {
-  return async function () {
-    const { setSpinnerFlag } = useContext(Context);
-    const makeApiCall = async () => {
-      let response = undefined;
-      setSpinnerFlag(false);
-      try {
-        response = await fn.apply(this, arguments);
-      } catch (e) {
-        toast.error("Something went wrong");
-        setSpinnerFlag(false);
-      }
-      setSpinnerFlag(false);
-      return response;
-    };
-    return { makeApiCall };
-  };
-};
-
 export function useGetData(link) {
   let data = undefined;
-  const useApiCalll = useApiCall(() => axios.get(`${API_URL}${link}`));
-  const { makeApiCall } = useApiCalll();
+  const { setSpinnerFlag } = useContext(Context);
+
   const getData = async () => {
-    const response = makeApiCall();
-    console.log(response);
+    setSpinnerFlag(true);
+    const response = await axios.get(`${API_URL}${link}`).catch(() => {
+      toast.error("Something went wrong");
+      setSpinnerFlag(false);
+    });
+    setSpinnerFlag(false);
     if (response) data = response.data.data;
     return data;
     //
@@ -38,44 +23,50 @@ export function useGetData(link) {
   return { getData };
 }
 
-// export function usePostData(link, postRequestBody) {
-//   const { setSpinnerFlag, apiResponse, setApiResponse } = useContext(Context);
-//   useEffect(() => {
-//     postData();
-//   }, [postRequestBody]);
+export function usePostData(link) {
+  const { setApiResponse } = useContext(Context);
 
-//   const postData = async () => {
-//     setSpinnerFlag(true);
-//     const response = await axios
-//       .post(`${API_URL}${link}`, postRequestBody)
-//       .catch(() => {
-//         toast.error("Something went wrong");
-//         setSpinnerFlag(false);
-//       });
-//     setSpinnerFlag(false);
+  const postData = async (postRequestBody) => {
+    const response = await axios
+      .post(`${API_URL}${link}`, postRequestBody)
+      .catch(() => {
+        toast.error("Something went wrong");
+      });
 
-//     setApiResponse(response.data);
-//   };
-//   return { apiResponse };
-// }
+    setApiResponse(response.data);
+    return response.data;
+  };
+  return { postData };
+}
 
-// export function useDeleteData(link, itemId) {
-//   const { setSpinnerFlag, apiResponse, setApiResponse } = useContext(Context);
-//   useEffect(() => {
-//     deleteData();
-//   }, []);
+export function useDeleteData(link) {
+  const { setApiResponse } = useContext(Context);
 
-//   const deleteData = async () => {
-//     setSpinnerFlag(true);
-//     const response = await axios
-//       .delete(`${API_URL}${link}/${itemId}`)
-//       .catch(() => {
-//         toast.error("Something went wrong");
-//         setSpinnerFlag(false);
-//       });
-//     setSpinnerFlag(false);
+  const deleteData = async (itemId) => {
+    const response = await axios
+      .delete(`${API_URL}${link}/${itemId}`)
+      .catch(() => {
+        toast.error("Something went wrong");
+      });
 
-//     setApiResponse(response.data);
-//   };
-//   return { apiResponse };
-// }
+    setApiResponse(response.data);
+    return response.data;
+  };
+  return { deleteData };
+}
+
+export function usePutData(link) {
+  const { setApiResponse } = useContext(Context);
+
+  const putData = async (itemId, postRequestBody) => {
+    const response = await axios
+      .put(`${API_URL}${link}/${itemId}`, postRequestBody)
+      .catch(() => {
+        toast.error("Something went wrong");
+      });
+
+    setApiResponse(response.data);
+    return response.data;
+  };
+  return { putData };
+}

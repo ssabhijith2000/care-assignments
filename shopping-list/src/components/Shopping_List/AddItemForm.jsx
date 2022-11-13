@@ -8,29 +8,27 @@ import {
   Button,
 } from "@mui/material";
 import { Context } from "../../App";
-import giveRandomKey from "../../Utils/RandomKeyGenerator";
-import { usePostData } from "../../Utils/apiService";
+import { usePostData, usePutData } from "../../Utils/apiService";
+
 function AddItemList() {
-  const { setItems, editState, setEditState } = useContext(Context);
+  const { editState, setEditState } = useContext(Context);
   const [inputFieldState, setInputFieldState] = useState();
-  const [postRequestBody, setPostRequestBody] = useState(null);
-  // let data = usePostData(`add`, postRequestBody);
-  // const addItemToList = (value) => {
-  //   setPostRequestBody({ item: value });
-  // };
+  let { postData } = usePostData(`add`);
+  let { putData } = usePutData(`edit`);
 
-  // useEffect(() => {
-  //   if (editState) {
-  //     setInputFieldState(editState.textFieldValue);
-  //   } else setInputFieldState("");
-  // }, [editState]);
+  const addItemToList = async (value) => {
+    await postData({ item: value });
+  };
 
-  // const editItemInList = (uniqueKey, value) => {
-  //   setItems((items) => {
-  //     items[uniqueKey] = value;
-  //     return { ...items };
-  //   });
-  // };
+  const editItemInList = async (id, value) => {
+    await putData(id, { item: value });
+  };
+
+  useEffect(() => {
+    if (editState) {
+      setInputFieldState(editState.textFieldValue);
+    } else setInputFieldState("");
+  }, [editState]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,10 +37,10 @@ function AddItemList() {
 
     if (editState) {
       editItemInList(editState.uniqueKey, itemValue);
-      setEditState(null);
     } else {
       addItemToList(itemValue);
     }
+    setEditState(null);
   };
 
   return (

@@ -10,19 +10,14 @@ function ShoppingList() {
   const [toDoList, setToDoList] = useState([]);
   const { apiResponse, spinnerFlag } = useContext(Context);
   const { getData } = useGetData(`todo`);
-  let [data, setData] = useState(undefined);
+
   useEffect(() => {
     async function fetchData() {
       let responsedata = await getData();
-      setData(responsedata);
+      setToDoList(responsedata);
     }
     fetchData();
   }, [apiResponse]);
-
-  useEffect(() => {
-    console.log(data);
-    if (data) setToDoList([...data]);
-  }, [data]);
 
   return (
     <>
