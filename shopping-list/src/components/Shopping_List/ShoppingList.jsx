@@ -9,12 +9,21 @@ import ItemCard from "./ShoppingItem";
 function ShoppingList() {
   const [toDoList, setToDoList] = useState([]);
   const { apiResponse, spinnerFlag } = useContext(Context);
-  const data = useGetData(`todo`, [apiResponse]);
+  const { getData } = useGetData(`todo`);
+  let [data, setData] = useState(undefined);
+  useEffect(() => {
+    async function fetchData() {
+      let responsedata = await getData();
+      setData(responsedata);
+    }
+    fetchData();
+  }, [apiResponse]);
 
   useEffect(() => {
     console.log(data);
-    if (data) setToDoList([...data.data]);
-  }, [data, apiResponse]);
+    if (data) setToDoList([...data]);
+  }, [data]);
+
   return (
     <>
       <Container maxWidth="lg">

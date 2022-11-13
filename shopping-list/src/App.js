@@ -14,7 +14,7 @@ function App() {
     dferikdcbut: "Tomatoes",
   });
   const [editState, setEditState] = useState();
-  const [spinnerFlag, setSpinnerFlag] = useState(true);
+  const [spinnerFlag, setSpinnerFlag] = useState(false);
   const [apiResponse, setApiResponse] = useState("");
   return (
     <Context.Provider

@@ -5,19 +5,18 @@ import { Context } from "../../App";
 import { useDeleteData } from "../../Utils/apiService";
 
 function ItemCard({ uniqueKey, itemNumber, item }) {
-  const [itemId, setItemId] = useState(null);
   const { setItems, items, setEditState } = useContext(Context);
-  let data = useDeleteData(`delete`, id);
-  const deleteItem = () => {
-    setItems((items) => {
-      delete items[uniqueKey];
-      return { ...items };
-    });
-  };
+  // let data = useDeleteData(`delete`, id);
+  // const deleteItem = () => {
+  //   setItems((items) => {
+  //     delete items[uniqueKey];
+  //     return { ...items };
+  //   });
+  // };
 
-  const editItem = () => {
-    setEditState({ uniqueKey: uniqueKey, textFieldValue: items[uniqueKey] });
-  };
+  // const editItem = () => {
+  //   setEditState({ uniqueKey: uniqueKey, textFieldValue: items[uniqueKey] });
+  // };
 
   return (
     <>
@@ -35,10 +34,10 @@ function ItemCard({ uniqueKey, itemNumber, item }) {
           >
             <span>{`${itemNumber}.`}</span>
             <span>{`${item}`}</span>
-            <Button variant="contained" onClick={editItem} color="error">
+            <Button variant="contained" color="error">
               Edit
             </Button>
-            <Button variant="contained" onClick={deleteItem} color="error">
+            <Button variant="contained" color="error">
               Remove
             </Button>
           </Box>

@@ -14,23 +14,23 @@ function AddItemList() {
   const { setItems, editState, setEditState } = useContext(Context);
   const [inputFieldState, setInputFieldState] = useState();
   const [postRequestBody, setPostRequestBody] = useState(null);
-  let data = usePostData(`add`, postRequestBody);
-  const addItemToList = (value) => {
-    setPostRequestBody({ item: value });
-  };
+  // let data = usePostData(`add`, postRequestBody);
+  // const addItemToList = (value) => {
+  //   setPostRequestBody({ item: value });
+  // };
 
-  useEffect(() => {
-    if (editState) {
-      setInputFieldState(editState.textFieldValue);
-    } else setInputFieldState("");
-  }, [editState]);
+  // useEffect(() => {
+  //   if (editState) {
+  //     setInputFieldState(editState.textFieldValue);
+  //   } else setInputFieldState("");
+  // }, [editState]);
 
-  const editItemInList = (uniqueKey, value) => {
-    setItems((items) => {
-      items[uniqueKey] = value;
-      return { ...items };
-    });
-  };
+  // const editItemInList = (uniqueKey, value) => {
+  //   setItems((items) => {
+  //     items[uniqueKey] = value;
+  //     return { ...items };
+  //   });
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
